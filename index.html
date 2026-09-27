@@ -7,7 +7,31 @@
 		body {
 			background-color: #dedede;
 		}
-		#header {
+		.grid-container {
+			display: grid;
+			grid-template: auto auto auto / auto 1fr;
+			justify-content: space-around;
+			align-items: stretch;
+			row-gap: 10px;
+			column-gap: 30px;
+		}
+		header {
+			grid-column: 1 / -1;
+			background-color: #efefef;
+		}
+		aside {
+			grid-column: 1;
+			grid-row: 2;
+			width: 50px;
+			background-color: #efefef;
+		}
+		main {
+			grid-column: 2;
+			grid-row: 2;
+			background-color: #efefef;
+		}
+		footer {
+			grid-column: 1 / -1;
 			background-color: #efefef;
 		}
 		.container {
@@ -24,8 +48,9 @@
 			text-align: center;
 			margin: 30px;
 			padding: 20px;
-			background-color: #efefef;
-			width: 300px;
+			background-color: #dfdfdf;
+			width: 200px;
+			border: 5px solid gray;
 			a, p {
 				font-size: 25px;
 			}
@@ -42,32 +67,40 @@
 </head>
 
 <body>
-	<div id="header" class="container">
-		<img class="item" src="images/logo.png" alt="AITU logo" height="50" width="45">
-		<a class="item" href="https://github.com/B00Legen">My Github</a>
-		<a class="item" href="https://b00legen.itch.io">My itch.io</a>
-		<a class="item" href="https://chess.com/member/b00legen">My chess.com</a>
-		<a class="item" href="https://codeforces.com/profile/B00Legen">My codeforces</a>
-	</div>
-	<div id="content" class="container">
-		<div class="card">
-			<h1>First</h1>
-			<img src="images/github_logo.png" alt="GitHub" height="150" width="150">
-			<p>github.com</p>
-			<a href="https://github.com/B00Legen">Go to</a>
-		</div>
-		<div class="card">
-			<h1>Second</h1>
-			<img src="images/itch_logo.png" alt="itch.io" height="150" width="150">
-			<p>itch.io</p>
-			<a href="https://b00legen.itch.io">Go to</a>
-		</div>
-		<div class="card">
-			<h1>Third</h1>
-			<img src="images/chess_logo.png" alt="chess.com" height="150" width="150">
-			<p>chess.com</p>
-			<a href="https://chess.com/member/b00legen">Go to</a>
-		</div>
+	<div class="grid-container">
+		<header class="container">
+			<img class="item" src="images/logo.png" alt="AITU logo" height="50" width="45">
+			<a class="item" href="https://github.com/B00Legen">My Github</a>
+			<a class="item" href="https://b00legen.itch.io">My itch.io</a>
+			<a class="item" href="https://chess.com/member/b00legen">My chess.com</a>
+			<a class="item" href="https://codeforces.com/profile/B00Legen">My codeforces</a>
+		</header>
+		<main class="container">
+			<div class="card">
+				<h1>First</h1>
+				<img src="images/github_logo.png" alt="GitHub" height="150" width="150">
+				<p>github.com</p>
+				<a href="https://github.com/B00Legen">Go to</a>
+			</div>
+			<div class="card">
+				<h1>Second</h1>
+				<img src="images/itch_logo.png" alt="itch.io" height="150" width="150">
+				<p>itch.io</p>
+				<a href="https://b00legen.itch.io">Go to</a>
+			</div>
+			<div class="card">
+				<h1>Third</h1>
+				<img src="images/chess_logo.png" alt="chess.com" height="150" width="150">
+				<p>chess.com</p>
+				<a href="https://chess.com/member/b00legen">Go to</a>
+			</div>
+		</main>
+		<aside>
+			<p>Hi</p>
+		</aside>
+		<footer class="container">
+			This is the end.
+		</footer>
 	</div>
 </body>
 
