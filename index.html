@@ -7,13 +7,27 @@
 		body {
 			background-color: #dedede;
 		}
-		.grid-container {
+		.layout {
 			display: grid;
 			grid-template: auto auto auto / auto 1fr;
 			justify-content: space-around;
 			align-items: stretch;
 			row-gap: 10px;
 			column-gap: 30px;
+		}
+		.gallery {
+			display: grid;
+			grid-template: repeat(2, auto) / repeat(5, auto);
+			justify-content: space-evenly;
+			align-items: center;
+			row-gap: 20px;
+			column-gap: 20px;
+		}
+		.flexbox {
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: space-around;
+			align-items: center;
 		}
 		header {
 			grid-column: 1 / -1;
@@ -34,11 +48,10 @@
 			grid-column: 1 / -1;
 			background-color: #efefef;
 		}
-		.container {
-			display: flex;
-			flex-wrap: wrap;
-			justify-content: space-around;
-			align-items: center;
+		h1, a, p { <!-- remove built-in padding and margin --!>
+			line-height: 1;
+			margin: 0px;
+			padding: 0px;
 		}
 		.item {
 			background-color: white;
@@ -54,51 +67,108 @@
 			a, p {
 				font-size: 25px;
 			}
-			h1, a, p { <!-- remove built-in padding and margin --!>
-				line-height: 1;
-				margin: 0px;
-				padding: 0px;
-			}
 		}
 		.card:hover {
 			background-color: white;
+		}
+		.painting {
+			position: relative;
+			width: 200px;
+		}
+		.painting img {
+			width: 200px;
+			height: 300px;
+		}
+		.painting_text {
+			background-color: white;
+			display: none;
+			position: absolute;
+			top: 50%;
+			left: 50%;
+		}
+		.painting:hover .painting_text {
+			display: block;
 		}
 	</style>
 </head>
 
 <body>
-	<div class="grid-container">
-		<header class="container">
+	<div class="layout">
+		<header class="flexbox">
 			<img class="item" src="images/logo.png" alt="AITU logo" height="50" width="45">
 			<a class="item" href="https://github.com/B00Legen">My Github</a>
 			<a class="item" href="https://b00legen.itch.io">My itch.io</a>
 			<a class="item" href="https://chess.com/member/b00legen">My chess.com</a>
 			<a class="item" href="https://codeforces.com/profile/B00Legen">My codeforces</a>
 		</header>
-		<main class="container">
-			<div class="card">
-				<h1>First</h1>
-				<img src="images/github_logo.png" alt="GitHub" height="150" width="150">
-				<p>github.com</p>
-				<a href="https://github.com/B00Legen">Go to</a>
+		<main>
+			<div class="flexbox">
+				<div class="card">
+					<h1>First</h1>
+					<img src="images/github_logo.png" alt="GitHub" height="150" width="150">
+					<p>github.com</p>
+					<a href="https://github.com/B00Legen">Go to</a>
+				</div>
+				<div class="card">
+					<h1>Second</h1>
+					<img src="images/itch_logo.png" alt="itch.io" height="150" width="150">
+					<p>itch.io</p>
+					<a href="https://b00legen.itch.io">Go to</a>
+				</div>
+				<div class="card">
+					<h1>Third</h1>
+					<img src="images/chess_logo.png" alt="chess.com" height="150" width="150">
+					<p>chess.com</p>
+					<a href="https://chess.com/member/b00legen">Go to</a>
+				</div>
 			</div>
-			<div class="card">
-				<h1>Second</h1>
-				<img src="images/itch_logo.png" alt="itch.io" height="150" width="150">
-				<p>itch.io</p>
-				<a href="https://b00legen.itch.io">Go to</a>
-			</div>
-			<div class="card">
-				<h1>Third</h1>
-				<img src="images/chess_logo.png" alt="chess.com" height="150" width="150">
-				<p>chess.com</p>
-				<a href="https://chess.com/member/b00legen">Go to</a>
+			<div class="gallery">
+				<div class="painting">
+					<img src="images/image0.png">
+					<p class="painting_text">The Everyday Painter</p>
+				</div>
+				<div class="painting">
+					<img src="images/image1.png">
+					<p class="painting_text">cardiel._ximena</p>
+				</div>
+				<div class="painting">
+					<img src="images/image2.png">
+					<p class="painting_text">Kitty Near</p>
+				</div>
+				<div class="painting">
+					<img src="images/image3.png">
+					<p class="painting_text">Uberxi</p>
+				</div>
+				<div class="painting">
+					<img src="images/image4.png">
+					<p class="painting_text">Momentify Art</p>
+				</div>
+				<div class="painting">
+					<img src="images/image5.png">
+					<p class="painting_text">Lionel Michel</p>
+				</div>
+				<div class="painting">
+					<img src="images/image6.png">
+					<p class="painting_text">AKAWA C</p>
+				</div>
+				<div class="painting">
+					<img src="images/image7.png">
+					<p class="painting_text">Kaarma senpai</p>
+				</div>
+				<div class="painting">
+					<img src="images/image8.png">
+					<p class="painting_text">N Saxton</p>
+				</div>
+				<div class="painting">
+					<img src="images/image9.png">
+					<p class="painting_text">Melanie Hayes</p>
+				</div>
 			</div>
 		</main>
 		<aside>
 			<p>Hi</p>
 		</aside>
-		<footer class="container">
+		<footer>
 			This is the end.
 		</footer>
 	</div>
