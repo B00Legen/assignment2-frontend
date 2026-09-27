@@ -20,6 +20,24 @@
 			background-color: white;
 			font-size: 25px;
 		}
+		.card {
+			text-align: center;
+			margin: 30px;
+			padding: 20px;
+			background-color: #efefef;
+			width: 300px;
+			a, p {
+				font-size: 25px;
+			}
+			h1, a, p { <!-- remove built-in padding and margin --!>
+				line-height: 1;
+				margin: 0px;
+				padding: 0px;
+			}
+		}
+		.card:hover {
+			background-color: white;
+		}
 	</style>
 </head>
 
@@ -30,6 +48,26 @@
 		<a class="item" href="https://b00legen.itch.io">My itch.io</a>
 		<a class="item" href="https://chess.com/member/b00legen">My chess.com</a>
 		<a class="item" href="https://codeforces.com/profile/B00Legen">My codeforces</a>
+	</div>
+	<div id="content" class="container">
+		<div class="card">
+			<h1>First</h1>
+			<img src="images/github_logo.png" alt="GitHub" height="150" width="150">
+			<p>github.com</p>
+			<a href="https://github.com/B00Legen">Go to</a>
+		</div>
+		<div class="card">
+			<h1>Second</h1>
+			<img src="images/itch_logo.png" alt="itch.io" height="150" width="150">
+			<p>itch.io</p>
+			<a href="https://b00legen.itch.io">Go to</a>
+		</div>
+		<div class="card">
+			<h1>Third</h1>
+			<img src="images/chess_logo.png" alt="chess.com" height="150" width="150">
+			<p>chess.com</p>
+			<a href="https://chess.com/member/b00legen">Go to</a>
+		</div>
 	</div>
 </body>
 
